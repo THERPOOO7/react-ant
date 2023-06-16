@@ -4,8 +4,8 @@ import '../src/App.css'
 // import Header from './Component/Header';
 import { BrowserRouter } from 'react-router-dom';
 import AppHeader from './Component/AppHeader/Index';
-import AppFooter from './Component/AppFooter/Index';
 import PageContent from './Component/PageContent/Index';
+import AppFooter from './Component/AppFooter/Index'
 
 
 const App = () => {

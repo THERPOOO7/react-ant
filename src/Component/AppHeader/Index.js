@@ -1,61 +1,64 @@
 import React from 'react'
-import {HomeFilled} from "@ant-design/icons"
-import { Menu } from "antd"
-import { useNavigate  } from 'react-router-dom'
+import { HomeFilled } from "@ant-design/icons"
+import { Menu, Typography } from "antd"
+import {ShoppingCartOutlined} from '@ant-design/icons'
+import { useNavigate } from 'react-router-dom'
 
 const AppHeader = () => {
     const navigate = useNavigate();
 
-    const onMenuClick = (item) =>{
+    const onMenuClick = (item) => {
         navigate(`/${item.key}`);
     }
-  return (
-    <div className='appHeader'>
-        <Menu 
-        onClick={onMenuClick}
-        mode="horizontal"
-        items={[
-            {
-                label:<HomeFilled/>,
-                key: "home",
-            },
-            {
-                label:"Men",
-                key: "man",
-                children:[
+    return (
+        <div className='appHeader'>
+            <Menu
+                onClick={onMenuClick}
+                mode="horizontal"
+                items={[
                     {
-                    label:"Man's shirts",
-                    key:"mans-shirts",
+                        label: <HomeFilled />,
+                        key: "",
                     },
                     {
-                    label:"Man's Pant",
-                    key:"mans-pant",
+                        label: "Men",
+                        key: "man",
+                        children: [
+                            {
+                                label: "Man's shirts",
+                                key: "mens-shirts",
+                            },
+                            {
+                                label: "Man's shoes",
+                                key: "mens-shoes",
+                            },
+                        ],
                     },
-              ],
-            },
-            {
-                label:"Women",
-                key: "women",
-                children:[
                     {
-                    label:"Women's shirts",
-                    key:"womens-shirts",
+                        label: "Women",
+                        key: "women",
+                        children: [
+                            {
+                                label: "Women's dresses",
+                                key: "womens-dresses",
+                            },
+                            {
+                                label: "Women's shoes",
+                                key: "womens-shoes",
+                            },
+                        ],
                     },
                     {
-                    label:"Women's Pant",
-                    key:"womens-pant",
+                        label: "Fragrance",
+                        key: "fragrances",
                     },
-              ],
-            },
-            {
-                label:"Fragrance",
-                key: "fragrance",
-            },
-        ]}>
+                ]}>
 
-        </Menu>
-    </div>
-  )
+            </Menu>
+            <Typography.Title>RP Store</Typography.Title>
+            <ShoppingCartOutlined className='shoppingCartItem'/>
+        </div>
+    )
 }
 
 export default AppHeader
